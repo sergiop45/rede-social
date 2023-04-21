@@ -6,6 +6,8 @@ import { PostModule } from './post/post.module';
 import { CommentModule } from './comment/comment.module';
 import { SequelizeModule } from '@nestjs/sequelize'
 import { User } from './user/user.model';
+import { Post } from './post/post.model';
+import { Comment } from './comment/comment.model';
 
 @Module({
   imports: [ 
@@ -16,7 +18,7 @@ import { User } from './user/user.model';
       username: 'root',
       password: 'Banco4551',
       database: 'test',
-      models: [User],
+      models: [User, Post, Comment],
       autoLoadModels: true,
       synchronize: true,
     }),

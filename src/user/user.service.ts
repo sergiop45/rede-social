@@ -56,9 +56,13 @@ export class UserService {
     let user = await this.userModel.update(updateUserDto, { where: {id: id} });
 
     if(user){
+
       return user;
+
     } else {
+
       return {message: "erro: " + user}
+    
     }
 
   }
@@ -69,8 +73,13 @@ export class UserService {
 
     if(user) {
       
-      await user.destroy();
-      
+      try{
+        await user.destroy();
+      }
+      catch(error){
+        return {message: "erro: "+ error}
+      }
+
     } else {
       return {message: "usuario não encontrado!"}
     }
