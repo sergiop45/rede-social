@@ -58,6 +58,20 @@ $ npm run test:e2e
 $ npm run test:cov
 ```
 
+<p align="center">
+  <img src="https://img.shields.io/badge/swagger-documentation-informational?style=flat-square&logo=swagger&logoColor=white&color=2bbc8a" alt="swagger">
+</p>
+
+<p align="center">
+  <a href="https://sergiop45.github.io/rede-social/swagger.json"><strong>Explore a documentação do Swagger »</strong></a>
+  <br />
+  <br />
+  <a href="https://sergiop45.github.io/rede-social/swagger.json">Swagger JSON</a>
+  
+  <a href="https://sergiop45.github.io/rede-social/docs">Swagger UI</a>
+</p>
+
+
 ## Support
 
 Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
