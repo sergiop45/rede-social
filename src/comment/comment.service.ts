@@ -65,15 +65,54 @@ export class CommentService {
 
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} comment`;
+  async findOne(id: number) {
+   
+    let comment = await this.commentModel.findOne({where: { id: id } });
+
+    if(comment) {
+      return comment;
+    } else {
+      return {message: "usuario não encontrado!"}
+    }
+
+
   }
 
-  update(id: number, updateCommentDto: UpdateCommentDto) {
-    return `This action updates a #${id} comment`;
+  async update(id: number, updateCommentDto: UpdateCommentDto) {
+
+    let comment = await this.commentModel.update(updateCommentDto, { where: {id: id} });
+
+    if(comment){
+
+      return comment;
+
+    } else {
+
+      return {message: "erro: " + comment}
+    
+    }
+   
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} comment`;
+  async remove(id: number) {
+   
+    let comment = await this.commentModel.findOne({ where: {id: id} });
+
+    if(comment) {
+      
+      try{
+        await comment.destroy();
+      }
+      catch(error){
+        return {message: "erro: "+ error}
+      }
+
+    } else {
+
+      return {message: "usuario não encontrado!"}
+      
+    }
+    
   }
+
 }
